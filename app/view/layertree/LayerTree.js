@@ -3,11 +3,10 @@ Ext.define('Geoext.demo.app.view.layertree.LayerTree', {
     extend: 'Ext.tree.Panel',
     xtype: 'Geoext.demo.app.view.layertree.LayerTree',
     requires: [
+        'Ext.tree.plugin.TreeViewDragDrop',
         'Geoext.demo.app.view.layertree.LayerTreeController',
         'Geoext.demo.app.view.layertree.LayerTreeModel',
-        'GeoExt.plugin.layertreenode.ContextMenu',
-
-        'Geoext.demo.app.view.grid.Grid'
+        'GeoExt.plugin.layertreenode.ContextMenu'
     ],
 
     controller: 'layertree-layertree',
@@ -23,46 +22,28 @@ Ext.define('Geoext.demo.app.view.layertree.LayerTree', {
     },
     columns: {
         header: false,
-
         items: [
             {
                 xtype: 'treecolumn',
                 dataIndex: 'text',
                 align: 'left',
                 flex: 1,
-                // ViewControllers do not listen to manually fired events
-                // so specify a listener config
-                listeners: {
-                    onMenuClick: 'onCreateContextUI'
-                },
                 plugins: [{
                     ptype: 'gx_layertreenode_contextmenu',
                     pluginId: 'myTestPlugin',
                     createContextUi: function(layerTreeNode) {
-                        // the plugin itself cannot fire events, but its container component 
-                        // the treecolumn can
+
+                        // the plugin itself cannot fire events
+                        // we get the ViewController from the column and call
+                        // the function manually
 
                         var column = this.getCmp();
-
-                        var contextMenu = Ext.create('Ext.menu.Menu', {
-                            height: 200,
-                            width: 250,
-                            items: [{
-                                text: 'Preview',
-                                handler: function() {
-                                    column.fireEvent('onMenuClick', layerTreeNode);
-                                }
-                            }]
-                        });
-
-                        return contextMenu;
-                        
+                        return column.up().up().getController().getContextMenu(layerTreeNode);
                     }
                 }]
             }
         ]
     },
     rootVisible: false,
-    //flex: 1,
     border: false
 });

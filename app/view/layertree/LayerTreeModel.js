@@ -4,9 +4,9 @@ Ext.define('Geoext.demo.app.view.layertree.LayerTreeModel', {
     requires: [
         'GeoExt.data.store.LayersTree'
     ],
-    data: {
-        name: 'Geoext.demo.app'
-    },
+    //data: {
+    //    name: 'Geoext.demo.app'
+    //},
 
     constructor: function() {
         this.callParent(arguments);

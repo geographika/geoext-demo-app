@@ -1,14 +1,13 @@
 
-Ext.define('Geoext.demo.app.view.Map', {
+Ext.define('Geoext.demo.app.view.map.Map', {
     extend: 'Ext.panel.Panel',
-    xtype: 'Geoext.demo.app.view.Map',
+    xtype: 'Geoext.demo.app.view.map.Map',
 
     requires: [
         'GeoExt.state.PermalinkProvider',
-
-        'Geoext.demo.app.view.MapController',
-        'Geoext.demo.app.view.MapModel',
-        'Geoext.demo.app.view.MapModel'
+        'Geoext.demo.app.view.map.MapController',
+        'Geoext.demo.app.view.map.MapModel',
+        'Geoext.demo.app.view.map.MapModel'
     ],
 
     controller: 'map',
@@ -23,7 +22,7 @@ Ext.define('Geoext.demo.app.view.Map', {
         var me = this;
 
         var wmsLayer = new ol.layer.Tile({
-            name: 'Warngebiete Kreise',
+            name: 'Warngebiete Kreise (Right-click)',
             source: new ol.source.TileWMS({
                 url: 'https://maps.dwd.de/geoserver/dwd/ows?',
                 params: {
@@ -60,9 +59,6 @@ Ext.define('Geoext.demo.app.view.Map', {
             stateful: true,
             stateId: 'gx_mapstate',
             map: me.map
-            //listeners: {
-            //    afterrender: 'afterMapRender'
-            //}
         };
 
         me.callParent();
@@ -101,10 +97,12 @@ Ext.define('Geoext.demo.app.view.Map', {
             if (event.state === null) {
                 return;
             }
-            me.olMap.getView().setCenter(event.state.center);
-            me.olMap.getView().setZoom(event.state.zoom);
-            me.olMap.getView().setRotation(event.state.rotation);
-            me.shouldUpdatePermalink = false;
+
+            var view = me.olMap.getView();
+            view.setCenter(event.state.center);
+            view.setZoom(event.state.zoom);
+            view.setRotation(event.state.rotation);
+            view.shouldUpdatePermalink = false;
         });
     },
 

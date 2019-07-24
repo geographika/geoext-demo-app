@@ -15,7 +15,6 @@ Ext.define('Geoext.demo.app.view.main.MainModel', {
         locationLayerStyle:
         {
             get: function() {
-                // debugger;
                 return new ol.style.Style({
                     stroke: new ol.style.Stroke({
                         color: 'blue',

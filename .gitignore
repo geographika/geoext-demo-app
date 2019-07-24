@@ -1,4 +1,5 @@
 /.vs
 /build
 /ext
-/lib
+/lib/geoext3
+bootstrap.*

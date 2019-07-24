@@ -18,7 +18,7 @@ Ext.define('Geoext.demo.app.view.main.Main', {
         'Geoext.demo.app.view.main.MainController',
         'Geoext.demo.app.view.main.MainModel',
 
-        'Geoext.demo.app.view.Map',
+        'Geoext.demo.app.view.map.Map',
         'Geoext.demo.app.view.layertree.LayerTree'
     ],
 
@@ -28,7 +28,7 @@ Ext.define('Geoext.demo.app.view.main.Main', {
     layout: 'border',
 
     items: [{
-        xtype: 'Geoext.demo.app.view.Map',
+        xtype: 'Geoext.demo.app.view.map.Map',
         region: 'center',
         layout: 'fit',
         tbar: [{

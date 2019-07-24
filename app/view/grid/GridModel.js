@@ -3,7 +3,7 @@ Ext.define('Geoext.demo.app.view.grid.GridModel', {
     alias: 'viewmodel.grid-grid',
 
     requires: [
-        "Geoext.demo.app.store.Countries"
+        "Geoext.demo.app.store.Districts"
     ],
 
     // https://www.sencha.com/forum/showthread.php?313600-Use-binded-data-to-configure-proxy-in-viewModel&p=1141585&viewfull=1#post1141585
@@ -31,8 +31,8 @@ Ext.define('Geoext.demo.app.view.grid.GridModel', {
         }
     },
     stores: {
-        countries: {
-            type: 'countries',
+        districts: {
+            type: 'districts',
             map: '{map}',
             createLayer: true,
             style: null, // hide WFS features unless selected - they are visible as part of the WMS

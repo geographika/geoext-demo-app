@@ -5,18 +5,16 @@ Ext.define('Geoext.demo.app.view.grid.GridController', {
     onFilterChange: function(rec, filters) {
 
         var wmsLayer = this.getViewModel().getData().wmsLayer;
-        var wmsFilter = GeoExt.util.OGCFilter.getOgcWmsFilterFromExtJsFilter(filters);
 
-        wmsLayer.getSource().updateParams({
-            filter: wmsFilter,
-            cacheBuster: Math.random()
+        if (wmsLayer) {
+            var wmsFilter = GeoExt.util.OGCFilter.getOgcWmsFilterFromExtJsFilter(filters);
 
-        });
+            wmsLayer.getSource().updateParams({
+                filter: wmsFilter,
+                cacheBuster: Math.random()
 
-        //var wfsLayer = this.getView().getStore().layer;
-        //var wfsGetFeatureFilter = GeoExt.util.OGCFilter.getOgcWfsFilterFromExtJsFilter(filters, 'And', '2.0.0');
-        //wfsLayer.getSource().clear();
-        //wfsLayer.getSource().refresh();
+            });
+        }
     },
 
     onDoubleClick: function(grid, record) {
@@ -25,7 +23,6 @@ Ext.define('Geoext.demo.app.view.grid.GridController', {
         var feat = record.getFeature();
         var extent = feat.getGeometry().getExtent();
         map.getView().fit(extent, map.getSize());
-
     },
 
     onWfsStoreBeforeLoad: function(store, params) {
@@ -34,7 +31,6 @@ Ext.define('Geoext.demo.app.view.grid.GridController', {
         var filters = store.getFilters();
         var wfsGetFeatureFilter = GeoExt.util.OGCFilter.getOgcWfsFilterFromExtJsFilter(filters.items, 'And', '2.0.0');
         params.filter = wfsGetFeatureFilter;
-
     }
 
 

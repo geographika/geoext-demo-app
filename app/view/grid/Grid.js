@@ -4,6 +4,7 @@ Ext.define('Geoext.demo.app.view.grid.Grid', {
     extend: 'Ext.grid.Panel',
 
     requires: [
+        'Ext.grid.filters.Filters',
         'Geoext.demo.app.view.grid.GridController',
         'Geoext.demo.app.view.grid.GridModel',
 
@@ -20,7 +21,7 @@ Ext.define('Geoext.demo.app.view.grid.Grid', {
     plugins: 'gridfilters',
 
     bind: {
-        store: '{countries}'
+        store: '{districts}'
     },
     selModel: {
         type: 'featuremodel',
@@ -67,7 +68,7 @@ Ext.define('Geoext.demo.app.view.grid.Grid', {
             xtype: 'toolbar',
             items: [{
                 xtype: 'button',
-                text: "Drop Filters",
+                text: "Clear Filters",
                 handler: function() {
                     this.up('grid').getPlugin('gridfilters').clearFilters();
                 }

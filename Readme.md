@@ -2,12 +2,12 @@
 
 This GeoExt application aims to demonstrate the following:
 
-* demonstrate the functionality available in GeoExt - the [Examples](https://geoext.github.io/geoext3/) are great
+* demonstrate the functionality available in GeoExt - the [Examples](https://geoext.github.io/geoext3/) are excellent resources
   but the next step of integrating all of them can be intimidating
 * show best-practices on creating and structuring a full GeoExt application
   * MVVM approach and data-binding
   * lazy instantiation of components
-  * use of Sencha CmdCMD
+  * use of Sencha Cmd
 
 The application is an ExtJS "classic" application, rather than the mobile-focussed 
 "modern" application. 
@@ -24,29 +24,62 @@ both types and shares code between both where possible.
 
 The following are required to run the application:
 
-* [Sencha's ExtJS framework](https://www.sencha.com/products/extjs/evaluate/)
-* [Sencha Cmd](https://www.sencha.com/products/extjs/cmd-download/)
-* GeoExt - we will install this using `git` in the next section
+* [Sencha's ExtJS framework (GPL version)](https://www.sencha.com/legal/gpl/) - tested with `ext-6.2.0-gpl.zip`
+* [Sencha Cmd](https://www.sencha.com/products/extjs/cmd-download/) - tested with version 6.7
+* GeoExt - we will get a copy of this using `git` in the next section
 
 The application uses [OpenLayers v4.6.5](https://github.com/openlayers/openlayers/releases/download/v4.6.5/v4.6.5-dist.zip) - this
 is already included in the `lib/openlayers` folder. 
 
 The references to the dependencies can be seen in the [app.json](app.json) file in `classpath`, `js`, and `css` sections. 
 
+* TOCHECK - is npm required? Errors on OSGeoLive setup, but app loads anyway - `sudo apt install npm`
+
 ## Setup
 
-1. Add GeoExt to the `lib/geoext3` folder
+Clone the app:
 
-  ```
-  cd lib
-  git clone https://github.com/geoext/geoext3.git
-  ```
+```
+cd /home/user
+git clone https://github.com/geographika/geoext-demo-app.git
+```
 
-2. 
+Add GeoExt to the `lib/geoext3` folder
 
+*For now use the following*
+
+```
+git clone https://github.com/geographika/geoext3.git
+cd geoext3
+git checkout geoext-demo-app
+```
+
+In the future we will use:
+
+```
+cd geoext-demo-app/lib
+git clone https://github.com/geoext/geoext3.git
+```
+
+Extract `ext-6.2.0-gpl.zip` to `/home/user/geoext-demo-app/ext`
+Extract `SenchaCmd-6.7.0.63-linux-amd64.sh.zip` to `SenchaCmd-6.7.0.63-linux-amd64.sh` and double click to run the installer 
+
+Sencha Cmd installs by default to `/home/user/bin/Sencha/Cmd/6.7.0.63`
+When installing:
+
+* Add sencha to your PATH
+* There is no requirement for the "Compass" extension for this demo
+
+You will now need to open a new terminal to make sure the `sencha` application can be found. 
+
+To run the application:
+
+```
+cd /home/user/geoext-demo-app
 sencha app watch
+```
 
-http://localhost:1841
+You can now navigate to http://localhost:1841 to see the application
 
 ## Building the Application
 
@@ -106,7 +139,7 @@ process.
 
 ### Folder Layout
 
-Applications that target a single toolkit will have the following structure.
+The application has the following structure.
 
     app/                # Contains JavaScript code
         model/          # Data model classes
@@ -114,7 +147,7 @@ Applications that target a single toolkit will have the following structure.
         store/          # Data stores
         controller/     # Global / application-level controllers
 
-    overrides/          # JavaScript code that is automatically required
+    lib/                # 3rd party libraries including GeoExt and OpenLayers
 
     sass/
         etc/            # Misc Sass code (all.scss is imported by default)
@@ -122,5 +155,19 @@ Applications that target a single toolkit will have the following structure.
         src/            # Sass rules
 
     resources/          # Assets such as images, fonts, etc.
+    WEB-INF/            # contains web.xml for configuring the inbuilt web server when running `sencha app watch --j2ee`
 
 See the [Sass readme](sass/Readme.md) for details on the "sass" folder.
+
+
+## Issues
+
+The following occurs on Firefox, but does not prevent the application from running:
+
+```
+XML Parsing Error: not well-formed
+Location: http://localhost:1841/bootstrap.json?_dc=1563986420948
+Line Number 1, Column 1:
+```
+
+This can be fixed by configuring the JSON mime type in `WEB-INF/web.xml`, and then running: `sencha app watch --j2ee`

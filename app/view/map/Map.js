@@ -22,7 +22,7 @@ Ext.define('Geoext.demo.app.view.map.Map', {
         var me = this;
 
         var wmsLayer = new ol.layer.Tile({
-            name: 'Warngebiete Kreise (Right-click)',
+            name: 'Districts (Right-click)',
             source: new ol.source.TileWMS({
                 url: 'https://maps.dwd.de/geoserver/dwd/ows?',
                 params: {

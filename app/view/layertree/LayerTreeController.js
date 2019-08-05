@@ -1,9 +1,9 @@
-Ext.define('Geoext.demo.app.view.layertree.LayerTreeController', {
+Ext.define('GeoExt.demo.app.view.layertree.LayerTreeController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.layertree-layertree',
 
     requires: [
-        'Geoext.demo.app.view.grid.Grid'
+        'GeoExt.demo.app.view.grid.Grid'
     ],
 
     gridWindow: null,
@@ -46,13 +46,13 @@ Ext.define('Geoext.demo.app.view.layertree.LayerTreeController', {
 
         if (!me.gridWindow) {
 
-            me.gridWindow = Ext.create("Ext.window.Window", {
+            me.gridWindow = Ext.create('Ext.window.Window', {
                 height: 600,
-                title: layer.qtitle,
+                title: 'Districts',
                 layout: 'fit',
                 maximizable: true,
                 items: [{
-                    xtype: 'Geoext.demo.app.view.grid.Grid',
+                    xtype: 'GeoExt.demo.app.view.grid.Grid',
                     width: 1050,
                     height: 600
                 }],

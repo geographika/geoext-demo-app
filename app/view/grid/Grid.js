@@ -1,12 +1,12 @@
 
-Ext.define('Geoext.demo.app.view.grid.Grid', {
-    xtype: 'Geoext.demo.app.view.grid.Grid',
+Ext.define('GeoExt.demo.app.view.grid.Grid', {
+    xtype: 'GeoExt.demo.app.view.grid.Grid',
     extend: 'Ext.grid.Panel',
 
     requires: [
         'Ext.grid.filters.Filters',
-        'Geoext.demo.app.view.grid.GridController',
-        'Geoext.demo.app.view.grid.GridModel',
+        'GeoExt.demo.app.view.grid.GridController',
+        'GeoExt.demo.app.view.grid.GridModel',
 
         'GeoExt.toolbar.WfsPaging',
         'GeoExt.selection.FeatureModel',
@@ -16,6 +16,10 @@ Ext.define('Geoext.demo.app.view.grid.Grid', {
     controller: 'grid-grid',
     viewModel: {
         type: 'grid-grid'
+    },
+
+    viewConfig: {
+        loadMask: true // TODO - check why this doesn't automatically apply the mask
     },
 
     plugins: 'gridfilters',
@@ -68,7 +72,7 @@ Ext.define('Geoext.demo.app.view.grid.Grid', {
             xtype: 'toolbar',
             items: [{
                 xtype: 'button',
-                text: "Clear Filters",
+                text: 'Clear Filters',
                 handler: function() {
                     this.up('grid').getPlugin('gridfilters').clearFilters();
                 }

@@ -3,10 +3,10 @@
  * calls Ext.application(). This is the ideal place to handle application launch and
  * initialization details.
  */
-Ext.define('Geoext.demo.app.Application', {
+Ext.define('GeoExt.demo.app.Application', {
     extend: 'Ext.app.Application',
 
-    name: 'Geoext.demo.app',
+    name: 'GeoExt.demo.app',
 
     quickTips: false,
     platformConfig: {
@@ -29,7 +29,7 @@ Ext.define('Geoext.demo.app.Application', {
         return Ext.ComponentQuery.query('gx_map')[0].map;
     },
 
-    getLayerBy: function(key, val, collection) {
+    getLayerBy: function(key, val) {
 
         // based on https://github.com/terrestris/BasiGX/blob/master/src/util/Layer.js
         var me = this;

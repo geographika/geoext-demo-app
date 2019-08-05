@@ -1,0 +1,24 @@
+{
+  "name": "geoext-demo-app",
+  "version": "0.0.1",
+  "description": "An example GeoExt application",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "eslint app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geographika/geoext-demo-app.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/geographika/geoext-demo-app/issues"
+  },
+  "homepage": "https://github.com/geographika/geoext-demo-app#readme",
+  "dependencies": {
+    "eslint": "^5.4.0"
+  }
+}

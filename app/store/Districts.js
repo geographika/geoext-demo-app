@@ -1,4 +1,4 @@
-Ext.define('Geoext.demo.app.store.Districts', {
+Ext.define('GeoExt.demo.app.store.Districts', {
     extend: 'GeoExt.data.store.WfsFeatures',
 
     // filter the underlying WFS as well as the store https://geoext.github.io/geoext3/master/docs/#!/api/GeoExt.data.store.Features
@@ -16,18 +16,12 @@ Ext.define('Geoext.demo.app.store.Districts', {
     typeName: 'dwd:Warngebiete_Kreise',
     outputFormat: 'application/json',
     sorters: [{
-        property: "WARNCELLID",
-        direction: "ASC"
+        property: 'WARNCELLID',
+        direction: 'ASC'
     }],
     startIndex: 0,
     count: 15,
     format: new ol.format.GeoJSON({
         featureProjection: 'EPSG:3857'
-    }),
-    style: new ol.style.Style({
-        stroke: new ol.style.Stroke({
-            color: 'rgba(255, 255, 0, 1.0)',
-            width: 2
-        })
     })
 });

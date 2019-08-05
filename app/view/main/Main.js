@@ -5,7 +5,7 @@
  *
  * TODO - Replace this content of this view to suite the needs of your application.
  */
-Ext.define('Geoext.demo.app.view.main.Main', {
+Ext.define('GeoExt.demo.app.view.main.Main', {
     extend: 'Ext.panel.Panel',
     xtype: 'app-main',
 
@@ -15,11 +15,11 @@ Ext.define('Geoext.demo.app.view.main.Main', {
 
         'GeoExt.form.field.GeocoderComboBox',
 
-        'Geoext.demo.app.view.main.MainController',
-        'Geoext.demo.app.view.main.MainModel',
+        'GeoExt.demo.app.view.main.MainController',
+        'GeoExt.demo.app.view.main.MainModel',
 
-        'Geoext.demo.app.view.map.Map',
-        'Geoext.demo.app.view.layertree.LayerTree'
+        'GeoExt.demo.app.view.map.Map',
+        'GeoExt.demo.app.view.layertree.LayerTree'
     ],
 
     controller: 'main',
@@ -28,7 +28,7 @@ Ext.define('Geoext.demo.app.view.main.Main', {
     layout: 'border',
 
     items: [{
-        xtype: 'Geoext.demo.app.view.map.Map',
+        xtype: 'GeoExt.demo.app.view.map.Map',
         region: 'center',
         layout: 'fit',
         tbar: [{
@@ -50,7 +50,7 @@ Ext.define('Geoext.demo.app.view.main.Main', {
             align: 'stretch'
         },
         items: {
-            xtype: 'Geoext.demo.app.view.layertree.LayerTree'
+            xtype: 'GeoExt.demo.app.view.layertree.LayerTree'
         }
     }]
 });

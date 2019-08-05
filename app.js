@@ -4,22 +4,22 @@
  * Sencha Cmd when upgrading.
  */
 Ext.application({
-    name: 'Geoext.demo.app',
+    name: 'GeoExt.demo.app',
 
-    extend: 'Geoext.demo.app.Application',
+    extend: 'GeoExt.demo.app.Application',
 
     requires: [
-        'Geoext.demo.app.view.main.Main'
+        'GeoExt.demo.app.view.main.Main'
     ],
 
     // The name of the initial view to create. With the classic toolkit this class
     // will gain a "viewport" plugin if it does not extend Ext.Viewport. With the
     // modern toolkit, the main view will be added to the Viewport.
     //
-    mainView: 'Geoext.demo.app.view.main.Main'
+    mainView: 'GeoExt.demo.app.view.main.Main'
 
     //-------------------------------------------------------------------------
-    // Most customizations should be made to Geoext.demo.app.Application. If you need to
+    // Most customizations should be made to GeoExt.demo.app.Application. If you need to
     // customize this file, doing so below this section reduces the likelihood
     // of merge conflicts when upgrading to new versions of Sencha Cmd.
     //-------------------------------------------------------------------------

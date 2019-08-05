@@ -1,4 +1,4 @@
-Ext.define('Geoext.demo.app.view.grid.GridController', {
+Ext.define('GeoExt.demo.app.view.grid.GridController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.grid-grid',
 
@@ -27,10 +27,17 @@ Ext.define('Geoext.demo.app.view.grid.GridController', {
 
     onWfsStoreBeforeLoad: function(store, params) {
 
-        var wfsLayer = store.layer;
+        var view = this.getView();
+        view.setLoading(true);
+
         var filters = store.getFilters();
         var wfsGetFeatureFilter = GeoExt.util.OGCFilter.getOgcWfsFilterFromExtJsFilter(filters.items, 'And', '2.0.0');
         params.filter = wfsGetFeatureFilter;
+    },
+
+    onWfsStoreAfterLoad: function() {
+        var view = this.getView();
+        view.setLoading(false);
     }
 
 

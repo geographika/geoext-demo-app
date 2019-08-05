@@ -1,13 +1,13 @@
 
-Ext.define('Geoext.demo.app.view.map.Map', {
+Ext.define('GeoExt.demo.app.view.map.Map', {
     extend: 'Ext.panel.Panel',
-    xtype: 'Geoext.demo.app.view.map.Map',
+    xtype: 'GeoExt.demo.app.view.map.Map',
 
     requires: [
         'GeoExt.state.PermalinkProvider',
-        'Geoext.demo.app.view.map.MapController',
-        'Geoext.demo.app.view.map.MapModel',
-        'Geoext.demo.app.view.map.MapModel'
+        'GeoExt.demo.app.view.map.MapController',
+        'GeoExt.demo.app.view.map.MapModel',
+        'GeoExt.demo.app.view.map.MapModel'
     ],
 
     controller: 'map',

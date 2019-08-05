@@ -1,11 +1,11 @@
 
-Ext.define('Geoext.demo.app.view.layertree.LayerTree', {
+Ext.define('GeoExt.demo.app.view.layertree.LayerTree', {
     extend: 'Ext.tree.Panel',
-    xtype: 'Geoext.demo.app.view.layertree.LayerTree',
+    xtype: 'GeoExt.demo.app.view.layertree.LayerTree',
     requires: [
         'Ext.tree.plugin.TreeViewDragDrop',
-        'Geoext.demo.app.view.layertree.LayerTreeController',
-        'Geoext.demo.app.view.layertree.LayerTreeModel',
+        'GeoExt.demo.app.view.layertree.LayerTreeController',
+        'GeoExt.demo.app.view.layertree.LayerTreeModel',
         'GeoExt.plugin.layertreenode.ContextMenu'
     ],
 

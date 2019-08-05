@@ -1,16 +1,13 @@
-Ext.define('Geoext.demo.app.view.layertree.LayerTreeModel', {
+Ext.define('GeoExt.demo.app.view.layertree.LayerTreeModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.layertree-layertree',
     requires: [
         'GeoExt.data.store.LayersTree'
     ],
-    //data: {
-    //    name: 'Geoext.demo.app'
-    //},
 
     constructor: function() {
         this.callParent(arguments);
-        var map = Geoext.demo.app.getApplication().getMap();
+        var map = GeoExt.demo.app.getApplication().getMap();
 
         var treeStore = Ext.create('GeoExt.data.store.LayersTree', {
             layerGroup: map.getLayerGroup(),

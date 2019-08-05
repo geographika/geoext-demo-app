@@ -1,7 +1,7 @@
 /**
  * This class is the view model for the Main view of the application.
  */
-Ext.define('Geoext.demo.app.view.main.MainModel', {
+Ext.define('GeoExt.demo.app.view.main.MainModel', {
     extend: 'Ext.app.ViewModel',
 
     alias: 'viewmodel.main',
@@ -9,7 +9,7 @@ Ext.define('Geoext.demo.app.view.main.MainModel', {
     formulas: {
         map: {
             get: function() {
-                return Geoext.demo.app.getApplication().getMap();
+                return GeoExt.demo.app.getApplication().getMap();
             }
         },
         locationLayerStyle:

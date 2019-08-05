@@ -15,19 +15,19 @@ This folder contains misc. support code for Sass builds (global functions, etc.)
 
 This folder contains Sass files defining CSS rules corresponding to classes
 included in the application's JavaScript code build. By default, files in this 
-folder are mapped to the application's root namespace, 'Geoext.demo.app'. This is set in
+folder are mapped to the application's root namespace, 'GeoExt.demo.app'. This is set in
 `"app.json"`:
 
     "sass": {
-        "namespace": "Geoext.demo.app"
+        "namespace": "GeoExt.demo.app"
     }
 
 ### ./sass/var
 
 This folder contains Sass files defining Sass variables corresponding to classes
 included in the application's JavaScript code build. By default, files in this 
-folder are mapped to the application's root namespace, 'Geoext.demo.app' in the same way
-as `"Geoext.demo.app/sass/src"`.
+folder are mapped to the application's root namespace, 'GeoExt.demo.app' in the same way
+as `"GeoExt.demo.app/sass/src"`.
 
 ## Slicing
 

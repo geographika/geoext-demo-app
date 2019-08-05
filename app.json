@@ -1,6 +1,6 @@
 {
-  "name": "Geoext.demo.app",
-  "namespace": "Geoext.demo.app",
+  "name": "GeoExt.demo.app",
+  "namespace": "GeoExt.demo.app",
   "version": "1.0.0.0",
   "framework": "ext",
   "toolkit": "classic",
@@ -66,13 +66,13 @@
   "sass": {
     /**
          * The root namespace to use when mapping *.scss files to classes in the
-         * sass/src and sass/var directories. For example, "Geoext.demo.app.view.Foo" would
-         * map to "sass/src/view/Foo.scss". If we changed this to "Geoext.demo.app.view" then
+         * sass/src and sass/var directories. For example, "GeoExt.demo.app.view.Foo" would
+         * map to "sass/src/view/Foo.scss". If we changed this to "GeoExt.demo.app.view" then
          * it would map to "sass/src/Foo.scss". To style classes outside the app's
          * root namespace, change this to "". Doing so would change the mapping of
-         * "Geoext.demo.app.view.Foo" to "sass/src/Geoext.demo.app/view/Foo.scss".
+         * "GeoExt.demo.app.view.Foo" to "sass/src/GeoExt.demo.app/view/Foo.scss".
          */
-    "namespace": "Geoext.demo.app",
+    "namespace": "GeoExt.demo.app",
 
     /**
          * Generated sass source settings

@@ -4,3 +4,5 @@
 /lib/geoext3
 /node_modules
 bootstrap.*
+
+coverage

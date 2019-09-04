@@ -34,6 +34,6 @@
     "sinon": "7.4.1"
   },
   "dependencies": {
-    "eslint": "^5.4.0"
+    "@geoext/geoext": "git://github.com/geoext/geoext3.git#master"
   }
 }
